@@ -15,7 +15,7 @@ app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
 user_id = os.environ["USER_ID"]
-user_id_02 = 'oXQhR6Rzlv4XkiutxVvdP5sbLQVI'
+# user_id_02 = 'oXQhR6Rzlv4XkiutxVvdP5sbLQVI'
 
 template_id = os.environ["TEMPLATE_ID"]
 
@@ -24,22 +24,26 @@ def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
   res = requests.get(url).json()
   weather = res['data']['list'][0]
+  print(weather)
   return weather['weather'], math.floor(weather['temp'])
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
+  print(delta)
   return delta.days
 
 def get_birthday():
   next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
   if next < datetime.now():
     next = next.replace(year=next.year + 1)
+  print((next - today).days)
   return (next - today).days
 
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
   if words.status_code != 200:
     return get_words()
+  print(words.json()['data']['text'])
   return words.json()['data']['text']
 
 def get_random_color():
@@ -53,5 +57,5 @@ wea, temperature = get_weather()
 data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
-res02 = wm.send_template(user_id_02, template_id, data)
-print(res02)
+# res02 = wm.send_template(user_id_02, template_id, data)
+# print(res02)
