@@ -29,7 +29,7 @@ def get_weather():
   print(weather['weather'])
   print(math.floor(weather['low']))
   print(math.floor(weather['high']))
-  print(math.floor(weather['airQuality']))
+  print((weather['airQuality'])
   return weather['weather'], math.floor(weather['temp'])
 
 def get_count():
