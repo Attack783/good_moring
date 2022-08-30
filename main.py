@@ -27,6 +27,9 @@ def get_weather():
   res = requests.get(url).json()
   weather = res['data']['list'][0]
   print(weather['weather'])
+  print(math.floor(weather['low']))
+  print(math.floor(weather['hight']))
+  print(math.floor(weather['airQuality']))
   return weather['weather'], math.floor(weather['temp'])
 
 def get_count():
