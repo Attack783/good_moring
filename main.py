@@ -28,7 +28,7 @@ def get_weather():
   weather = res['data']['list'][0]
   print(weather['weather'])
   print(math.floor(weather['low']))
-  print(math.floor(weather['hight']))
+  print(math.floor(weather['high']))
   print(math.floor(weather['airQuality']))
   return weather['weather'], math.floor(weather['temp'])
 
