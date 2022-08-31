@@ -30,7 +30,7 @@ def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
   res = requests.get(url).json()
   weather = res['data']['list'][0]
-  return weather['weather'], math.floor(weather['temp']),weather['airQuality'],math.floor(weather['low']),math.floor(weather['high']),weather['lastUpdateTime]
+  return weather['weather'], math.floor(weather['temp']),weather['airQuality'],math.floor(weather['low']),math.floor(weather['high']),math.floor(weather['lastUpdateTime])
 def get_weather_02():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + '东莞'
   res = requests.get(url).json()
