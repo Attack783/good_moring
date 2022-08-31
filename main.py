@@ -30,7 +30,7 @@ def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
   res = requests.get(url).json()
   weather = res['data']['list'][0]
-  return weather['weather'], math.floor(weather['temp']),weather['airQuality'],math.floor(weather['low']),math.floor(weather['high'])
+  return weather['weather'], math.floor(weather['temp']),weather['airQuality'],math.floor(weather['low']),math.floor(weather['high']),weather['lastUpdateTime]
 def get_weather_02():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + '东莞'
   res = requests.get(url).json()
@@ -69,16 +69,19 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
-wea, temperature,airquality, low, high = get_weather()
-wea, temperature,airquality, low, high = get_weather_02()
+wea, temperature,airquality, low, high,lastUpdateTime = get_weather()
+wea, temperature,airquality, low, high,lastUpdateTime = get_weather_02()
 
-data = {"weather":{"value":wea},"airquality":{"value":airquality},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
-data_02 = {"weather":{"value":wea},"airquality":{"value":airquality},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday_02()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"weather":{"value":wea},"airquality":{"value":airquality},"lastUpdateTime":{"value":airquality},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data_02 = {"weather":{"value":wea},"airquality":{"value":airquality},"lastUpdateTime":{"value":airquality},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday_02()},"words":{"value":get_words(), "color":get_random_color()}}
 
 res = wm.send_template(user_id, template_id, data)
 # 测试模板02
 # res = wm.send_template(user_id, template_id_02, data_02)
 
 print(res)
-res02 = wm.send_template(user_id_02, template_id_02, data_02)
-print(res02)
+# res02 = wm.send_template(user_id_02, template_id_02, data_02)
+# print(res02)
+print(lastUpdateTime)                                                                                                                                            
+                                                                                                                                              
+                                                                                                                                            
