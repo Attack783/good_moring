@@ -20,8 +20,10 @@ user_id = os.environ["USER_ID"]
 # user_id_02 = 'oXQhR6WI_labGe7SUni7Bd_HXmq8'
 
 # template_id = os.environ["TEMPLATE_ID"] 	
-template_id = 'bQVzm7L7zjGpQQHdMZN9qhmlW-gxXfl4REw8kzIOuiE'
-template_id_02 = 'xC4H93cXZky6tLieppueAFgOJtBcRmSTbSBPlsu65Gg'
+# 女模板
+template_id = 'zdASne5hOVn72cWPLh9zD8rYRm45rAdTCmfKkcBpAzE'
+# 男模板
+template_id_02 = 'nlvEMEseCYVJ5ZhQ80M1RTwUdV2_4I3kys-FTc7zsPg'
 
 
 def get_weather():
