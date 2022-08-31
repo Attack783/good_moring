@@ -17,7 +17,7 @@ app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
 user_id = os.environ["USER_ID"]
-# user_id_02 = 'oXQhR6WI_labGe7SUni7Bd_HXmq8'
+user_id_02 = 'oXQhR6WI_labGe7SUni7Bd_HXmq8'
 
 # template_id = os.environ["TEMPLATE_ID"] 	
 # 女模板
