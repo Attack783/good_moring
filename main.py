@@ -19,8 +19,8 @@ user_id = os.environ["USER_ID"]
 
 # user_id_02 = 'oXQhR6WI_labGe7SUni7Bd_HXmq8'
 
-template_id = os.environ["TEMPLATE_ID"] 	
-# template_id = 'iOUqgS7asQJoTpwu6eKbo1qN7aPN-nRtwzKYHU3uXyo'
+# template_id = os.environ["TEMPLATE_ID"] 	
+template_id = 'WO61SWRpfloh-EwRpXwD6AYqsjYeCcdTRdaSgM4P1Z8'
 
 def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
