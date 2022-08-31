@@ -22,7 +22,7 @@ user_id = os.environ["USER_ID"]
 # template_id = os.environ["TEMPLATE_ID"] 	
 # 女模板
 template_id = 'zdASne5hOVn72cWPLh9zD8rYRm45rAdTCmfKkcBpAzE'
-# 男模板
+# 男模板02
 template_id_02 = 'nlvEMEseCYVJ5ZhQ80M1RTwUdV2_4I3kys-FTc7zsPg'
 
 
@@ -69,8 +69,9 @@ data = {"weather":{"value":wea},"airquality":{"value":airquality},"low":{"value"
 data_02 = {"weather":{"value":wea},"airquality":{"value":airquality},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday_02()},"words":{"value":get_words(), "color":get_random_color()}}
 
 res = wm.send_template(user_id, template_id, data)
-res = wm.send_template(user_id, template_id_02, data_02)
+# 测试模板02
+# res = wm.send_template(user_id, template_id_02, data_02)
 
 print(res)
-# res02 = wm.send_template(user_id_02, template_id, data)
-# print(res02)
+res02 = wm.send_template(user_id_02, template_id_02, data_2)
+print(res02)
