@@ -10,6 +10,8 @@ today = datetime.now()
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
+birthday_02 = '03-17'
+
 
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
@@ -39,6 +41,12 @@ def get_birthday():
     next = next.replace(year=next.year + 1)
   print((next - today).days)
   return (next - today).days
+def get_birthday_02():
+  next = datetime.strptime(str(date.today().year) + "-" + birthday_02, "%Y-%m-%d")
+  if next < datetime.now():
+    next = next.replace(year=next.year + 1)
+  print((next - today).days)
+  return (next - today).days
 
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
@@ -55,10 +63,11 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature,airquality, low, high = get_weather()
-print(airquality)
 data = {"weather":{"value":wea},"airquality":{"value":airquality},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data_02 = {"weather":{"value":wea},"airquality":{"value":airquality},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday_02()},"words":{"value":get_words(), "color":get_random_color()}}
+
 res = wm.send_template(user_id, template_id, data)
-res = wm.send_template(user_id, template_id_02, data)
+res = wm.send_template(user_id, template_id_02, data_02)
 
 print(res)
 # res02 = wm.send_template(user_id_02, template_id, data)
