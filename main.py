@@ -21,9 +21,9 @@ user_id_02 = 'oXQhR6WI_labGe7SUni7Bd_HXmq8'
 
 # template_id = os.environ["TEMPLATE_ID"] 	
 # 女模板
-template_id = 'zdASne5hOVn72cWPLh9zD8rYRm45rAdTCmfKkcBpAzE'
+template_id_02 = 'zdASne5hOVn72cWPLh9zD8rYRm45rAdTCmfKkcBpAzE'
 # 男模板02
-template_id_02 = 'nlvEMEseCYVJ5ZhQ80M1RTwUdV2_4I3kys-FTc7zsPg'
+template_id = 'nlvEMEseCYVJ5ZhQ80M1RTwUdV2_4I3kys-FTc7zsPg'
 
 
 def get_weather():
@@ -82,6 +82,6 @@ res = wm.send_template(user_id, template_id, data)
 print(res)
 # res02 = wm.send_template(user_id_02, template_id_02, data_02)
 # print(res02)
-print(lastUpdateTime)                                                                                                                                            
+                                                                                                                                           
                                                                                                                                               
                                                                                                                                             
