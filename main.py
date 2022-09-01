@@ -77,11 +77,11 @@ data_02 = {"weather":{"value":wea},"airquality":{"value":airquality},"low":{"val
 
 res = wm.send_template(user_id, template_id, data)
 # 测试模板02
-res = wm.send_template(user_id, template_id_02, data_02)
-
+# res = wm.send_template(user_id, template_id_02, data_02)
 print(res)
-# res02 = wm.send_template(user_id_02, template_id_02, data_02)
-# print(res02)
+
+res02 = wm.send_template(user_id_02, template_id_02, data_02)
+print(res02)
                                                                                                                                            
                                                                                                                                               
                                                                                                                                             
