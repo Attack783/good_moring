@@ -69,11 +69,11 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
-wea, temperature,airquality, low, high,lastUpdateTime = get_weather()
-wea, temperature,airquality, low, high,lastUpdateTime = get_weather_02()
+wea, temperature,airquality, low, high = get_weather()
+wea, temperature,airquality, low, high = get_weather_02()
 
-data = {"weather":{"value":wea},"airquality":{"value":airquality},"lastUpdateTime":{"value":lastUpdateTime},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
-data_02 = {"weather":{"value":wea},"airquality":{"value":airquality},"lastUpdateTime":{"value":lastUpdateTime},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday_02()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"weather":{"value":wea},"airquality":{"value":airquality},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data_02 = {"weather":{"value":wea},"airquality":{"value":airquality},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday_02()},"words":{"value":get_words(), "color":get_random_color()}}
 
 res = wm.send_template(user_id, template_id, data)
 # 测试模板02
